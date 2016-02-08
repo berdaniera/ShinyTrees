@@ -47,14 +47,6 @@ server <- function(input, output, session) {
   observe({
     click<-input$mymap_marker_click
 
-#     output$hplot <- renderPlot({
-#       par(mar=c(4,4,0.4,0.4),bty="n",las=1)
-#       hist(log10(Qmn),xaxt="n",breaks="fd",main="",
-#            las=1,xlim=log10(c(1,100)))
-#       magaxis(1,unlog=T,usepar=T)
-#       if(!is.null(click)) abline(v=log10(Qmn[a.n(click$id)]),lwd=2,col="#001A57")
-#     })
-
     output$lplot <- renderPlot({
       par(mar=c(4,4,0.4,0.4),bty="n",las=1)
       plot(Qquant[2,],type="l",ylim=c(0,150),xlim=c(100,300),xaxp=c(0,360,12),log="",xlab="Day",ylab="Water use (kg)")
